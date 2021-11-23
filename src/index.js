@@ -3,7 +3,7 @@
  * @Author: MADAO
  * @Date: 2021-11-23 09:39:22
  * @LastEditors: MADAO
- * @LastEditTime: 2021-11-23 10:09:06
+ * @LastEditTime: 2021-11-23 14:20:13
  */
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
@@ -39,7 +39,7 @@ const createWindow = () => {
 
   mainWindow.on('close', (e) => {
     e.preventDefault();
-    mainWindow.webContents.send('fuck')
+    mainWindow.webContents.send('quit')
     return false;
   })
 
