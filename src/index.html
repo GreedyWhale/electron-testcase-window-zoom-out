@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <h1>💖 Hello World!</h1>
+    <p>Welcome to your Electron application.</p>
+    <button onclick="minimize()">minimize</button>
+    <script>
+      const { ipcRenderer } = require('electron');
+      const { getCurrentWindow } = require('@electron/remote');
+      const mainWindow = getCurrentWindow();
+      const minimize = () => mainWindow.minimize();
+
+      ipcRenderer.on('fuck', () => {
+        getCurrentWindow().hide()
+      })
+    </script>
+  </body>
+</html>
